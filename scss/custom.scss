@@ -1,0 +1,541 @@
+// Custom.scss
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../bootstrap/scss/_functions.scss";
+
+// 2. Include any default variable overrides here
+$secondary: #5c432a;
+$success: #33CC33;
+$info: #66CCFF;
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../bootstrap/scss/bootstrap.scss";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+//@import "../bootstrap/scss/_maps.scss";
+//@import "../bootstrap/scss/_mixins.scss";
+//@import "../bootstrap/scss/_root.scss";
+
+// 6. Optionally include any other parts as needed
+@import "../bootstrap/scss/variables";
+//@import "../bootstrap/scss/utilities";
+//@import "../bootstrap/scss/_reboot";
+//@import "../bootstrap/scss/_type";
+//@import "../bootstrap/scss/_images";
+//@import "../bootstrap/scss/_containers";
+//@import "../bootstrap/scss/_grid";
+//@import "../bootstrap/scss/_helpers";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+//@import "../bootstrap/scss/_utilities/api";
+
+// 8. Add additional custom code here
+
+$backgrounds: ("sea": #1f94ed, "river": #059a89, "river-clifftop": #09d5d5, "river-mouth": #0daea0,
+                     "pond": #09d59e, "ground": #33CC33, "ponds-and-rivers": #0099CC, "beach": #FFFFCC, 
+                     "rocks": #669999, "rotten-food": #FF9966, "flowers": #FFCCFF, "villagers": #CC0000,
+                    "trees": #669933, "tree-stumps": #999900, "palm-trees": #CCCC66, "flying": #66CCFF);
+
+body{
+    background-image: url(../img/background.jpg);
+    background-size: cover;
+    background-position: 0px 0px;
+}
+
+@mixin flex{
+    display: flex !important;
+}
+
+@mixin center{
+    @include flex;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+@mixin space-around{
+    @include flex;
+    justify-content: space-around !important;
+    flex-wrap: wrap !important;
+    align-items: flex-start !important;
+}
+
+.content{
+    display: flex;
+    justify-content: space-between;
+    width: 100% !important;
+    min-height: 950px;
+}
+
+.header-container{
+    @include flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 15%;
+    padding: 2.5%;
+    margin: 1.25%;
+    background-color: #ffffffe1;
+    border-radius: 25px;
+
+    .title{
+        width: 100%;
+        margin-bottom: 25%;
+    }
+
+    .button-group{
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+
+        .button-section{
+            @include center;
+            width: 100%;
+            margin: 15%;
+
+            button{
+                width: 100%;
+
+                .button-icon{
+                    width: 50%;
+                    height: 100%;
+                }
+            }
+        }
+    }
+}
+
+.body-container{
+    @include center;
+    flex-direction: row !important;
+    width: 60% !important;
+
+    .main-container{
+        @include center;
+        width: 100% !important;
+        background-color: #ffffffe1;
+        border-radius: 25px;
+    }
+}
+
+.footer-container{
+    @include flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 15%;
+    padding: 2.5%;
+    margin: 1.25%;
+    border-radius: 25px;
+    /*background-image: url(../img/C.J._NH.webp);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;*/
+}
+
+.error-container{
+    @include center;
+    flex-direction: column;
+    height: 1000px;
+    color: #333333;
+    background: #FFFFFF;
+
+    h1{
+        margin-bottom: 50px;
+        background: #FFFFFF;
+        text-shadow: 2px 2px 0px #FFFFFF, 5px 4px 0px rgba(0,0,0,0.15);
+    }
+}
+
+.spacer{
+    aspect-ratio: 900/600;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.layer{
+    background-image: url(../img/layered-peaks.svg);
+}
+
+@mixin legend-colors{
+
+    .legend-colors{
+        display: flex;
+        flex-direction: row;
+    }
+
+    .legend{
+        display: flex;
+        flex-direction: row;
+    }
+}
+
+@include legend-colors;
+
+.legend-color{
+    border: 1px solid rgb(60, 60, 60);
+    border-radius: 5px;
+    width: 25px;
+    height: 25px;
+    margin-left: 7.5px;
+    margin-right: 7.5px;
+}
+
+@each $backgroundName, $backgroundValue in $backgrounds {
+
+    .#{$backgroundName}-background{
+
+        background-color: #{$backgroundValue} !important;
+    }
+}
+
+.sticker-location{
+    position: absolute;
+    width: 50px;
+    margin-left: -35px;
+    margin-top: 50px;
+    z-index: 1;
+}
+
+.image-icon{
+    width: 100%;
+}
+
+.data{
+    margin: 15px;
+    overflow: scroll;
+}
+
+.video{
+    @include space-around;
+    overflow: hidden;
+}
+
+.information{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    overflow: hidden;
+    width: 100%;
+    text-align: center;
+}
+
+.favourite-star{
+    position: absolute !important;
+    width: 50px !important;
+    margin-left: -35px !important;
+    margin-top: -10px !important;
+    z-index: 2 !important;
+    display: none !important;
+}
+
+.animal-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    margin: 25px;
+    padding: 25px;
+    border-radius: 25px;
+    background-color: #ffffffeb;
+
+    div{
+        padding-top: 10px;
+    }
+
+    .animal-line{
+        @include flex;
+        align-items: center;
+
+        img{
+            padding-right:15px;
+        }
+    }
+}
+
+.animal-title{
+    display: flex;
+}
+
+.animal-img{
+    width:350px;
+    border-radius: 25px;
+    background-color: #FFFFFF;
+}
+
+.animal-content{
+    @include center;
+    width: 100%;
+}
+
+.animal-data{
+    @include center;
+    flex-direction: column;
+    padding:15px;
+    width: 100%;
+}
+
+.animal-data div{
+    margin-left: 25px;
+}
+
+.animal-data-img{
+    width: 100px;
+}
+
+.animal-text-data{
+    @include flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+}
+
+.favourite-star:hover{
+    display: block !important;
+}
+
+td{
+    position:relative;
+}
+
+tfoot{
+    background-color: #FFFFFF !important;
+}
+
+.selected-shadow{
+    border: 2px solid rgb(0, 0, 0) !important;
+}
+
+.fade-in-top {
+	-webkit-animation: fade-in-top 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+	        animation: fade-in-top 1.5s cubic-bezier(0.390, 0.575, 0.565, 1.000) both;
+}
+
+/* ----------------------------------------------
+ * Generated by Animista on 2023-2-11 17:14:16
+ * Licensed under FreeBSD License.
+ * See http://animista.net/license for more info. 
+ * w: http://animista.net, t: @cssanimista
+ * ---------------------------------------------- */
+
+/**
+ * ----------------------------------------
+ * animation fade-in-top
+ * ----------------------------------------
+ */
+ @-webkit-keyframes fade-in-top {
+    0% {
+      -webkit-transform: translateY(-50px);
+              transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes fade-in-top {
+    0% {
+      -webkit-transform: translateY(-50px);
+              transform: translateY(-50px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+              transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+
+@media (max-width: 1220px) {
+
+    .content{
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .header-container{
+        width: 95%;
+        padding: 2.5%;
+        margin: 2%;
+        text-align: center;
+        background-color: #ffffffe1;
+        border-radius: 25px;
+    
+        .title{
+            width: 100%;
+            margin: 0;
+        }
+    
+        .button-group{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: center;
+            width: 25%;
+    
+            .button-section{
+                @include center;
+                width: 100%;
+    
+                button{
+                    width: 200px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+
+    .body-container{
+        flex-direction: row !important;
+        width:95% !important;
+        margin: 2%;
+    
+        .main-container{
+            @include center;
+            width: 100% !important;
+            background-color: #ffffffe1;
+            border-radius: 25px;
+        }
+    }
+
+    .animal-text-data {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+
+        fieldset{
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1080px) {
+
+    .header-container{
+    
+        .title{
+            width: 100%;
+            margin: 0;
+        }
+    
+        .button-group{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: center;
+            width: 50%;
+    
+            .button-section{
+                @include center;
+                width: 200px;
+                margin: 5px;
+    
+                button{
+                    width: 200px;
+                    height: 100px;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 764px) and (max-width: 1080px) {
+
+    .header-container{
+    
+        .title{
+            width: 100%;
+            margin: 0;
+        }
+    
+        .button-group{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: center;
+            width: 25%;
+    
+            .button-section{
+                @include center;
+                width: 170px;
+                margin: 5px;
+    
+                button{
+                    width: 170px;
+                    height: 90px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 764px) {
+    
+    .header-container{
+    
+        .title{
+            width: 100%;
+            margin: 0;
+        }
+    
+        .button-group{
+            display: flex;
+            justify-content: space-around;
+            flex-direction: row;
+            align-items: center;
+            flex-wrap: wrap;
+            width: 100%;
+    
+            .button-section{
+                @include center;
+                width: 95px;
+                margin: 5px;
+    
+                button{
+                    width: 95px;
+                    height: 55px;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 425px) {
+    
+    .animal-img{
+        width: 200px;
+    }
+
+    .animal-container{
+        margin: 0;
+        width: 95%;
+    }
+}
+
+@media (max-width: 320px) {
+
+    .animal-content{
+        margin-top:5px;
+    }
+
+    .animal-container{
+        margin: 5px;
+        width: 100%;
+    }
+
+    .animal-img{
+        width: 200px;
+    }
+}

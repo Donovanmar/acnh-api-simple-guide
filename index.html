@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACNH - All</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/custom.css" />
+</head>
+
+<body>
+    <div class="content">
+        <div class="header-container">
+            <div class="title">
+                <h1><span class="text-secondary">A</span>nimal <span class="text-secondary">C</span>rossing: <span class="text-secondary">N</span>ew <span class="text-secondary">H</span>orizons <a href="./index.html" class="badge bg-secondary text-warning" style="text-decoration: none;">API REST</a></h2>
+            </div>
+            <div class="button-group">
+                <div class="button-section">
+                    <button class="btn btn-success fw-bold" value="bugs" type="button"
+                        data-bs-target="#bugs" aria-expanded="false" aria-controls="bugs">
+                        <img src="img/bug.png" class="button-icon"/>
+                    </button>
+                </div>
+                <div class="button-section">
+                    <button class="btn btn-info fw-bold" value="fish" type="button"
+                        data-bs-target="#fish" aria-expanded="false" aria-controls="fish">
+                        <img src="img/fish.png" class="button-icon"/>
+                    </button>
+                </div>
+                <div class="button-section">
+                    <button class="btn btn-primary fw-bold" value="sea-creatures" type="button"
+                        data-bs-target="#sea-creatures" aria-expanded="false" aria-controls="sea-creatures">
+                        <img src="img/sea-creature.png" class="button-icon"/>
+                    </button>
+                </div>
+                <div class="button-section">
+                    <button class="btn btn-light fw-bold" value="information" type="button"
+                        data-bs-target="#information" aria-expanded="false" aria-controls="information">
+                        <img src="img/info.png" class="button-icon"/>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <!--<div class="spacer layer"></div>-->
+        <div class="body-container default-container">
+            <div class="main-container">
+                <div class="video data">
+                    <iframe width="700" height="394" src="https://www.youtube.com/embed/u9TY741PSh8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+                <div class="fish data" id="fish">
+                    <div class="table-responsive">
+                        <table class="table table-responsive">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" scope="col" id="table-header-fish">Fish</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body-fish">
+                            </tbody>
+                            <tfoot>
+                                <td colspan="4">
+                                    <label>Show with selected shadow:</label>
+                                    <select id="shadow">
+                                        <option disabled selected>Shadows</option>
+                                        <option value="Smallest (1)">Smallest</option>
+                                        <option value="Small (2)">Small</option>
+                                        <option value="Medium (3)">Medium</option>
+                                        <option value="Narrow">Narrow</option>
+                                        <option value="Large (5)">Large</option>
+                                        <option value="Largest (6)">Largest</option>
+                                        <option value="Largest with fin (6)">Largest with fin</option>
+                                    </select>
+                                </td>
+                                <td colspan="1">
+                                    <label>Show location </label>
+                                    <input type="checkbox" id="fish-location">
+                                </td>
+                                <td colspan="5">
+                                    <div class="legend-colors">
+                                        <div class="legend"><label>Legend:</label></div>
+                                        <div class="legend"><div class="legend-color sea-background"></div><div>Sea</div></div>
+                                        <div class="legend"><div class="legend-color sea-background"><img src="img/pier.png" width="25px"/></div><div>Pier</div></div>
+                                        <div class="legend"><div class="legend-color river-background"></div><div>River</div></div>
+                                        <div class="legend"><div class="legend-color river-mouth-background"></div><div>River mouth</div></div>
+                                        <div class="legend"><div class="legend-color river-clifftop-background"></div><div>River clifftop</div></div>
+                                        <div class="legend"><div class="legend-color pond-background"></div><div>Pond</div></div>
+                                    </div>
+                                </td>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="bugs data" id="bugs">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="text-center" scope="col" id="table-header-bugs">Bugs</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body-bugs">
+                            </tbody>
+                            <tfoot>
+                                <td colspan="1">
+                                    <label>Show location </label>
+                                    <input type="checkbox" id="bugs-location">
+                                </td>
+                                <td colspan="9">
+                                    <div class="legend-colors">
+                                        <div class="legend"><label>Legend:</label></div>
+                                        <div class="legend"><div class="legend-color ponds-and-rivers-background"></div><div>Ponds and rivers</div></div>
+                                        <div class="legend"><div class="legend-color beach-background"></div><div>Beach</div></div>
+                                        <div class="legend"><div class="legend-color ground-background"></div><div>Ground</div></div>
+                                        <div class="legend"><div class="legend-color flowers-background"></div><div>Flowers</div></div>
+                                        <div class="legend"><div class="legend-color rotten-food-background"></div><div>Rotten</div></div>
+                                        <div class="legend"><div class="legend-color tree-stumps-background"></div><div>Tree stumps</div></div>
+                                        <div class="legend"><div class="legend-color trees-background"></div><div>Trees</div></div>
+                                        <div class="legend"><div class="legend-color palm-trees-background"></div><div>Palm trees</div></div>
+                                        <div class="legend"><div class="legend-color flying-background"></div><div>Flying</div></div>
+                                    </div>
+                                </td>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="sea-creatures data" id="sea-creatures">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" class="text-center" id="table-header-sea-creatures">Sea creatures</th>
+                                </tr>
+                            </thead>
+                            <tbody id="table-body-sea-creatures">
+                            </tbody>
+                            <tfoot>
+
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                <div class="information data" id="information">
+                    <div>
+                        <h5>Code</h5>
+                        <a href="https://github.com/Donovanmar/acnh-api-simple-guide/" target="_blank"><img src="./img/code.png"/></a>
+                    </div>
+                    <div>
+                        <h5>Documentation</h5>
+                        <a href="docs/documentation.pdf" target="_blank"><img src="./img/documentation.png"/></a>
+                    </div>
+                    <div>
+                        <h5>Contact</h5>
+                        <a href="/index.html" target="_blank"><img src="./img/contact.png"/></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-container default-container">
+            
+        </div>
+    </div>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
